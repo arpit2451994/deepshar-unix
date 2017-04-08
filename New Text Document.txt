@@ -1,0 +1,16 @@
+CREATE MULTISET TABLE Client_Holiday_rushi ( HolidayId         SMALLINT NOT NULL ,
+
+                                         HolidayName       VARCHAR(50) CHARACTER SET UNICODE NOT NULL CASESPECIFIC  ,
+
+                                         IsActive          BYTEINT NOT NULL ,
+
+                                         NumberDaysBefore  SMALLINT NOT NULL ,
+
+                                         NumberDaysAfter   SMALLINT NOT NULL ,
+
+                                         IsForcedIntoModel BYTEINT NOT NULL ,
+
+                                         IsTimeWeighted    BYTEINT NOT NULL ,
+
+                                         IsExposed         BYTEINT NOT NULL  ) ;
+drop table client_holiday_rushi;

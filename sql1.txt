@@ -1,0 +1,222 @@
+ 
+May 01 2016 | Logged in as : 97685  
+ 
+
+  
+
+ 
+  VnV - Database SQL basics - REG - Day 1
+
+ 
+  
+  1 of 10
+SQL is a           (Marks 1)
+
+
+Non Procedural Language
+Procedure Language
+A pure OOP Language
+None of the above
+
+
+ 
+  2 of 10
+Consider the following query:
+SELECT deptno,ename,sal FROM emp 
+ORDER By deptno, sal desc;
+
+What will be the output?           (Marks 4)
+
+
+ DEPTNO ENAME    SAL
+ ----------        ----------      ----------
+         10      CLARK     2450
+        10       KING        5000 
+        20     JONES       2975       
+        20      SCOTT      3000
+        20      MILLER     3000        
+        30     WARD       1250
+        30     TURNER    1500
+        30     ALLEN       1600
+        30     BLAKE       2850 
+        
+       
+    DEPTNO ENAME    SAL
+----------        ----------      ----------
+        10       KING        5000
+        10      CLARK      2450
+        20      SCOTT      3000
+        20      MILLER     3000
+        20     JONES       2975
+        30     BLAKE       2850
+        30     ALLEN       1600
+        30     TURNER    1500 
+        30     WARD       1250
+
+       
+    DEPTNO ENAME    SAL
+----------        ----------      ----------
+        30     BLAKE       2850
+        30     ALLEN       1600
+        30     TURNER    1500 
+        30     WARD       1250
+        20      SCOTT      3000
+        20      MILLER     3000
+        20     JONES       2975
+        10       KING        5000
+        10      CLARK      2450
+               
+       
+    DEPTNO ENAME    SAL
+----------        ----------      ----------
+        10       KING        5000
+        20      SCOTT      3000
+        20      MILLER     3000
+        20     JONES       2975
+        30     BLAKE       2850
+        10      CLARK      2450        
+        30     ALLEN       1600
+        30     TURNER    1500 
+        30     WARD       1250
+
+       
+
+
+ 
+  3 of 10
+Which are DML statements?        (Marks 1)  
+
+
+COMMIT
+UPDATE
+DELETE
+CREATE
+
+
+ 
+  4 of 10
+Identify the correct option for the given statements related to the data models.           
+(Marks 2)
+
+
+In HDS data model, relationships between entities are represented as parent-child
+Network model is more complex than the hierarchical model because of links present.
+NDS is a subset of the Hierarchical model
+None of the above
+
+
+ 
+  5 of 10
+SELECT dept_code, staff_name, staff_sal
+FROM Staff_Master 
+ORDER BY dept_code, staff_sal
+
+What is true regarding the above query?            (Marks 2)
+
+
+sorts the records based on dept_code
+sorts the records based on staff_sal and then dept_code
+sorts the records based on staff_sal
+sorts the records based on dept_code and then staff_sal
+
+
+ 
+  6 of 10
+SELECT staff_name || ' FROM '|| staff_address AS Staff
+FROM Staff_Master
+Above SQL statement executes without error         (Marks 2)
+
+
+TRUE
+
+FALSE
+
+
+
+ 
+  7 of 10
+DESC TABLE_NAME is an example of          (Marks 1)
+
+
+DML
+DCL
+DDL
+None of the above
+
+
+ 
+  8 of 10
+
+Which of the following query will select all the employees who earn salary either 10000,15000,20000?
+(Marks 4)
+
+
+
+Select empid,ename,sal
+        from emp
+        where sal =10000 or sal = 15000 or sal = 20000;
+
+
+Select empid,ename,sal
+        from emp
+        where sal between 10000 and 15000 or sal = 20000;
+
+
+Select empid,ename,sal
+        from emp
+        where sal = (10000 ,15000,20000);
+
+
+Select empid,ename,sal
+        from emp
+        where sal IN (10000 ,15000,20000);
+
+
+
+
+ 
+  9 of 10
+Given the structure of the BOOK_MASTER Table  
+BOOK_ID VARCHAR2(20)
+BOOK_NAME VARCHAR2(30)
+what will be the output of the following  query 
+ SELECT book_name 
+ FROM Book_master
+ WHERE book_name LIKE '%JAVA%' OR '%C%'
+
+(Marks 1)
+
+
+All books which has JAVA and C somewhere in the book name
+All books with book name starting with JAVA
+No output
+error in the query
+
+
+ 
+  10 of 10
+Evaluate this SQL statement
+
+SELECT emp.empno, (15*emp.sal) + (.5* emp.comm) + (.35* emp.sal) AS CALC_VALUE FROM emp;
+
+What will happen if you remove all the parentheses from the calculation?      (Marks 2)     
+
+
+The value displayed in the CALC_VALUE column will be lower than the one that we 
+     are getting with parenthesis.
+
+The value displayed in the CALC_VALUE column will be higher than the one that we 
+     are getting with parenthesis.
+
+There will be no difference in the values displayed in the CALC_VALUE column with 
+     or without parenthesis.
+
+An error will be reported if you remove the parenthesis from the calculation
+
+
+
+ 
+
+  
+    
+Questionmark Perception licensed to IGATE Global Solutions Ltd 

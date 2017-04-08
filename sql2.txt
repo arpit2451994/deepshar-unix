@@ -1,0 +1,177 @@
+VnV - Database SQL basics - REG - Day 2
+
+ 
+  
+  1 of 10
+Assuming today is Monday, 10 July 2000, what is returned by this statement: 
+SELECT to_char(NEXT_DAY(sysdate, 'MONDAY'), 'DD-MON-YY') FROM dual; 
+(Marks 2)
+
+
+17th-Jul-00
+17-JUL-00
+Jul-17-00
+17-7-00
+
+
+ 
+  2 of 10
+What is the output of the following query?          (Marks 2)
+
+SELECT NVL2(NULL,20,30) FROM   DUAL ;
+
+
+NULL
+20
+30
+error
+
+
+ 
+  3 of 10
+Management has asked you to calculate the value 12* salary* commission_pct for 
+all the employees in the EMP table.
+
+The EMP table contains these columns:
+
+LAST_NAME  VARCHAR2(35) NOT NULL
+SALARY   NUMBER(9,2)    NOT NULL
+COMMISSION_PCT NUMBER(4,2)
+
+Which statement ensures that a value is displayed in the calculated column for 
+all employees?          (Marks 2)
+
+
+SELECT last_name, 12 * salary* commission_pct FROM emp;
+SELECT last_name, 12 * salary* (commission_pct,0)  FROM emp;
+SELECT last_name, 12 * salary* (NVL (commission_pct,0))  FROM emp;
+SELECT last_name, 12 * salary* (DECODE (commission_pct,0)) FROM emp;
+
+
+ 
+  4 of 10
+To produce a meaningful result set without any cartesian products, what is the minimum 
+number of conditions that should appear in the WHERE clause of a four-table join? 
+(Marks 2)
+
+
+2
+3
+4
+There is no such criteria
+
+
+ 
+  5 of 10
+Which SELECT statement will get the result 'elloWorld' from the string 'HelloWorld'?          
+(Marks 2)
+
+
+SELECT SUBSTR ('HelloWorld', 1) FROM dual;
+SELECT INITCAP (TRIM ('HelloWorld', 1, 1)) FROM dual
+SELECT LOWER (SUBSTR ('HelloWorld', 2, 1)) FROM dual
+SELECT SUBSTR ('HelloWorld', 2) FROM dual
+
+
+ 
+  6 of 10
+Identify the correct option/options to find the job-wise department-wise minimum 
+salary in the table EMP           (Marks 4)
+
+
+SELECT job,deptno,sal FROM emp GROUP BY job,deptno
+
+SELECT job,deptno ,MIN(sal) FROM emp GROUP BY job
+
+SELECT job,deptno ,sal FROM emp WHERE sal in SELECT MIN(sal) m FROM 
+     emp GROUP BY job,deptno
+
+SELECT job,deptno ,MIN(sal) FROM emp GROUP BY job,deptno
+
+
+
+ 
+  7 of 10
+When the comparison operator used in joining columns is other than equality then 
+the join is called  _____        (Marks 1)
+
+
+Self Join
+Non-Equi Join
+Equi Join
+Outer Join
+
+
+ 
+  8 of 10
+Which clause should you use to exclude group results while using aggregate functions?          
+(Marks 1)
+
+
+WHERE
+HAVING
+RESTRICT
+GROUP BY
+
+
+ 
+  9 of 10
+
+Given the following table structure:
+
+Book_transaction(
+Book_code NUMBER(10) ,Student_code NUMBER(6) ,
+Staff_code number(8), Book_issue_Date date not null,
+Book_expected_return_date date not null,
+Book_actual_return_date date);
+
+Which of the following sql statement displays the book code of the books which are returned?
+(Marks 2)
+
+
+
+SELECT book_code 
+     FROM Book_Transaction
+     WHERE book_expected_return_date IS  NULL
+
+SELECT book_code 
+     FROM Book_Transaction
+     WHERE book_expected_return_date IS NOT NULL
+
+SELECT book_code 
+     FROM Book_Transaction
+     WHERE book_actual_return_date IS  NULL
+
+SELECT book_code 
+     FROM Book_Transaction
+     WHERE book_actual_return_date IS NOT NULL
+
+
+
+ 
+  10 of 10
+I want to display information about departments and their locations, which of the 
+following query/queries will yield the correct results?         (Marks 4)
+
+
+SELECT department_id,department_name, location_name FROM departments,
+     locations
+     WHERE departments.location_id =locations.location_id;
+
+SELECT department_id,department_name,location_name
+     FROM departments,locations
+     WHERE location_id=locations.location_id;
+
+SELECT department_id,department_name,location_name
+     FROM departments
+     NATURAL JOIN locations;
+
+SELECT department_id,department_name,location_name
+     FROM departments
+     NATURAL JOIN locations ON location_id;
+
+
+
+ 
+
+  
